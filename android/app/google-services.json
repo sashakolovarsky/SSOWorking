@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "779578984133",
+    "project_id": "data-rythm",
+    "storage_bucket": "data-rythm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:779578984133:android:f7983459f9d928e45e52ac",
+        "android_client_info": {
+          "package_name": "com.sash.datarhythm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "779578984133-5ga4ggagako1vgjl7i5e3tqe7vteodo8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sash.datarhythm",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "779578984133-io2iq9b2f8fif44i59vinhu92u95anon.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvezhSx0VhYw3A2izTIT-vWMWqcEJhB9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "779578984133-io2iq9b2f8fif44i59vinhu92u95anon.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "779578984133-lqh6uva053gut0s2qb4nu198etmceeh2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.sash.datarhythm"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
