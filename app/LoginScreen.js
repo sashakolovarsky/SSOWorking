@@ -11,12 +11,11 @@ import {
   statusCodes,
   GoogleSigninButton,
 } from "@react-native-google-signin/google-signin";
-import login from "../Utils/Auth";
 
 const logo = require('../assets/images/DataRhythmLogo.jpg');
 const screenWidth = Dimensions.get("window").width;
 
-const LoginScreen = ({  }) => {
+const LoginScreen = ({ navigation }) => { // Access navigation prop here
   const [isInProgress, setIsInProgress] = useState(false);
   const webClientId =
     "779578984133-io2iq9b2f8fif44i59vinhu92u95anon.apps.googleusercontent.com";
@@ -32,8 +31,22 @@ const LoginScreen = ({  }) => {
       setIsInProgress(true);
       await GoogleSignin.hasPlayServices();
       const userInfo = await GoogleSignin.signIn();
-      console.log(userInfo)
-      // Save user sessionId
+      console.log(userInfo);
+      // Save user sessionId and handle user info if needed
+
+      // Navigate to HomeScreen upon successful login
+      navigation.navigate('HomeScreen'); // Use navigation instead of router
+    } catch (error) {
+      console.log(error);
+      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+        // Handle cancellation
+      } else if (error.code === statusCodes.IN_PROGRESS) {
+        // Handle in-progress
+      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+        // Handle play services not available
+      } else {
+        // Handle other errors
+      }
     } finally {
       setIsInProgress(false);
     }
@@ -56,22 +69,22 @@ const LoginScreen = ({  }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#000000",  // Set screen background color to black
+    backgroundColor: "#000000",
     justifyContent: "center",
     alignItems: "center",
-    paddingHorizontal: 20,  // Add padding to prevent text from going off-screen
+    paddingHorizontal: 20,
   },
   logo: {
-    width: screenWidth * 0.5,  // Adjusted logo size to be responsive
-    height: screenWidth * 0.5, // Make sure the logo is square
-    marginBottom: 30,  // Adjust margin to move the logo up
+    width: screenWidth * 0.5,
+    height: screenWidth * 0.5,
+    marginBottom: 30,
   },
   welcomeText: {
-    fontSize: 24,  // Reduced the font size for better fit
-    fontWeight: "bold",  // Make the text bold
-    color: "#FFFFFF",  // Set text color to white
-    marginBottom: 20,  // Space between the welcome text and the Google Sign-In button
-    textAlign: "center",  // Center the text
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#FFFFFF",
+    marginBottom: 20,
+    textAlign: "center",
   },
 });
 

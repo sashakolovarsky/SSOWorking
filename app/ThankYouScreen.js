@@ -7,7 +7,6 @@ export default function ThankYouScreen({ navigation, route }) {
 
   useEffect(() => {
     console.log('Answers:', answers); // Log the answers to the console
-    storeAnswers(answers);
     async function saveCompletionStatus() {
       const currentDate = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
       await AsyncStorage.setItem('questionnaireCompleted', currentDate);
@@ -20,7 +19,7 @@ export default function ThankYouScreen({ navigation, route }) {
       <Text style={styles.thankYouText}>Thank you, you completed the questionnaire for today!</Text>
       <Button
         title="Home Page"
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => navigation.navigate('HomeScreen')}
       />
     </View>
   );

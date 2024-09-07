@@ -3,13 +3,14 @@ import { View, Text, TouchableOpacity, StyleSheet, Image, Alert } from 'react-na
 
 const logo = require('../assets/images/DataRhythmLogo.jpg');
 
-export default function HomeScreen({ }) {
+export default function HomeScreen({ navigation }) {
   const [isQuestionnaireCompleted, setIsQuestionnaireCompleted] = useState(false);
 
   const handleStartAnswering = () => {
     if (isQuestionnaireCompleted) {
       Alert.alert('You have already completed the questionnaire for today.');
     } else {
+      navigation.navigate("Question1");
     }
   };
 
