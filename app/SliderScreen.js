@@ -10,7 +10,7 @@ export default function SliderScreen({ navigation, route }) {
 
   const handleNext = () => {
     const updatedAnswers = { ...answers, [question]: rating };
-    navigation.navigate(nextScreen, { answers: updatedAnswers });
+    navigation.navigate(nextScreen, { answers: updatedAnswers, userInfo });
   };
 
   return (

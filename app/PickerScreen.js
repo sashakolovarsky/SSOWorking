@@ -12,7 +12,7 @@ export default function PickerScreen({ navigation, route }) {
   const handleNext = () => {
     const selectedTime = `${selectedHour}:${selectedMinute}`;
     const updatedAnswers = { ...answers, [question]: selectedTime };
-    navigation.navigate(nextScreen, { answers: updatedAnswers });
+    navigation.navigate(nextScreen, { answers: updatedAnswers, userInfo });
   };
 
   return (

@@ -5,12 +5,11 @@ const logo = require('../assets/images/DataRhythmLogo.jpg');
 
 export default function HomeScreen({ navigation }) {
   const [isQuestionnaireCompleted, setIsQuestionnaireCompleted] = useState(false);
-
   const handleStartAnswering = () => {
     if (isQuestionnaireCompleted) {
       Alert.alert('You have already completed the questionnaire for today.');
     } else {
-      navigation.navigate("Question1");
+      navigation.navigate("Question1", { userInfo, answers: {} });
     }
   };
 

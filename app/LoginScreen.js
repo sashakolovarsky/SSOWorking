@@ -35,7 +35,7 @@ const LoginScreen = ({ navigation }) => { // Access navigation prop here
       // Save user sessionId and handle user info if needed
 
       // Navigate to HomeScreen upon successful login
-      navigation.navigate('HomeScreen'); // Use navigation instead of router
+      navigation.navigate('HomeScreen', { userInfo });
     } catch (error) {
       console.log(error);
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
